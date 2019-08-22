@@ -11,7 +11,7 @@ int main()
     }
     std::cout << "the sum is: " << sum << std::endl;
     system("pause");
-    system("pause");
+    //测试提交与同步
     return 0;
 }
 
