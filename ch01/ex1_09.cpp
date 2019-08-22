@@ -1,7 +1,9 @@
 // sum the numbers from 50 to 100 (use while)
 
+#include <climits>
 #include <iostream>
 
+using namespace std;
 int main()
 {
     int sum = 0, val = 50;
@@ -10,6 +12,8 @@ int main()
         ++val;
     }
     std::cout << "the sum is: " << sum << std::endl;
+    cout << sizeof(char) << endl;
+    cout << "the max int:" << INT_MAX << endl;
     system("pause");
     //测试提交与同步
     //再提交一次
