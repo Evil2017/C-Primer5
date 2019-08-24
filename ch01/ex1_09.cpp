@@ -14,7 +14,6 @@ int main()
     std::cout << "the sum is: " << sum << std::endl;
     cout << sizeof(char) << endl;
     cout << "the max int:" << INT_MAX << endl;
-    system("pause");
     //测试提交与同步
     //再提交一次
     //再再次提交测试

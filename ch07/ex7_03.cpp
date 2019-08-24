@@ -5,19 +5,23 @@ const std::string& shorterString(const string& s1, const string& s2)
 {
     cout << "&s1:" << &s1 << "\t&s2:" << &s2 << endl;
     cout << "s1:" << s1 << "\ts2:" << s2 << endl;
+    static string s3 = "局部变量";
+    cout << "&s3=" << &s3 << endl;
+    // return s3;
     return s1.size() <= s2.size() ? s1 : s2;
 }
 int main()
 {
-    string a = "1234324";
-    string b = "abdcde";
-    string c = "";
+    string a = "1234567890";
+    string b = "abc";
+    string& c = a;
     cout << "&a=" << &a << "\t&b=" << &b << "\t&c=" << &c << endl;
     cout << "a=" << a << "\tb=" << b << "\tc=" << c << endl;
-    c = shorterString(a, b);
-    cout << "&a=" << &a << "\t&b=" << &b << "\t&c=" << &c << endl;
-    cout << "a=" << a << "\tb=" << b << "\tc=" << c << endl;
-    return 0;
+    auto& d = shorterString(a, b);
+
+    cout << "&a=" << &a << "\t&b=" << &b << "\t&c=" << &c << "\t&d=" << &d << endl;
+    cout << "a=" << a << "\tb=" << b << "\tc=" << c << "\t&d=" << d << endl;
+    return 0 /*  */;
 
     Sales_data total;
     if (cin >> total.bookNo >> total.units_sold >> total.revenue) {
