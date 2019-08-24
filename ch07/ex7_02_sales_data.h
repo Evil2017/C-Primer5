@@ -1,5 +1,6 @@
 #ifndef CP5_ex7_02_h
 #define CP5_ex7_02_h
+#include <iostream>
 #include <string>
 using namespace std;
 // Add the combine and isbn members to the Sales_data
@@ -18,7 +19,16 @@ Sales_data& Sales_data::combine(const Sales_data& rhs)
 {
     units_sold += rhs.units_sold;
     revenue += rhs.revenue;
+    std::cout << "this:" << this << endl;
     return *this;
 }
-
+double Sales_data ::avg_private() const
+{
+    if (units_sold) {
+        return revenue / units_sold;
+    }
+    else {
+        return 0;
+    }
+}
 #endif

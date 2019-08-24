@@ -12,7 +12,17 @@ const std::string& shorterString(const string& s1, const string& s2)
 }
 int main()
 {
-    string a = "1234567890";
+    Sales_data sd1;
+    Sales_data sd2;
+    cout << "输入sd1的bookNo\tunits_sold\trevenue" << endl;
+    cin >> sd1.bookNo >> sd1.units_sold >> sd1.revenue;
+    cout << "输入sd2的bookNo\tunits_sold\trevenue" << endl;
+    cin >> sd2.bookNo >> sd2.units_sold >> sd2.revenue;
+    cout << "将sd1加到sd2上" << endl;
+    sd2 = sd2.combine(sd1);
+    cout << sd2.bookNo << " " << sd2.units_sold << " " << sd2.revenue << endl;
+    cout << &sd2 << endl;
+    string a = "1234567地械890";
     string b = "abc";
     string& c = a;
     cout << "&a=" << &a << "\t&b=" << &b << "\t&c=" << &c << endl;
