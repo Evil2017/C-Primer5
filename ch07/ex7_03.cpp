@@ -31,7 +31,6 @@ int main()
 
     cout << "&a=" << &a << "\t&b=" << &b << "\t&c=" << &c << "\t&d=" << &d << endl;
     cout << "a=" << a << "\tb=" << b << "\tc=" << c << "\t&d=" << d << endl;
-    return 0 /*  */;
 
     Sales_data total;
     if (cin >> total.bookNo >> total.units_sold >> total.revenue) {

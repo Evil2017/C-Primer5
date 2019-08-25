@@ -9,8 +9,8 @@
 #ifndef CP5_ex7_09_h
 #define CP5_ex7_09_h
 
-#include <string>
 #include <iostream>
+#include <string>
 
 struct Person {
     const std::string& getName() const { return name; }
@@ -22,6 +22,7 @@ struct Person {
 
 std::istream& read(std::istream& is, Person& person)
 {
+    std::cout << "input the person's name\taddress:" << std::endl;
     is >> person.name >> person.address;
     if (!is) person = Person();
     return is;

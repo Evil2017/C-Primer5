@@ -28,20 +28,20 @@ std::istream& read(std::istream& is, Sales_data& item)
     double price = 0;
     is >> item.bookNo >> item.units_sold >> price;
     item.revenue = price * item.units_sold;
-    return is;
+    return is; // the way for if istream if true or false
 }
 
 std::ostream& print(std::ostream& os, const Sales_data& item)
 {
     os << item.isbn() << " " << item.units_sold << " " << item.revenue;
-    return os;
+    return os; // the way for if istream if true or false
 }
 
 Sales_data add(const Sales_data& lhs, const Sales_data& rhs)
 {
-    Sales_data sum = lhs;
+    Sales_data sum = lhs; // sum  is new object
     sum.combine(rhs);
-    return sum;
+    return sum; //返回sum的副本
 }
 
 #endif
