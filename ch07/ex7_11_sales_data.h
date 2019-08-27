@@ -22,7 +22,7 @@ struct Sales_data {
     double revenue = 0.0;
 };
 
-// nonmember functions
+// nonmember functions no declaration inside Classs body
 std::istream& read(std::istream& is, Sales_data& item)
 {
     double price = 0;
@@ -31,6 +31,12 @@ std::istream& read(std::istream& is, Sales_data& item)
     return is;
 }
 
+std::ostream& write(std::ostream& os, const Sales_data& item)
+{
+    os << "isbn:" << item.isbn() << "units_sold: " << item.units_sold << "revenue:" << item.revenue;
+    os << "form write" << std::endl;
+    return os;
+}
 std::ostream& print(std::ostream& os, const Sales_data& item)
 {
     os << item.isbn() << " " << item.units_sold << " " << item.revenue;
