@@ -12,7 +12,7 @@ struct Sales_data {
         : bookNo(s), units_sold(n), revenue(n * p)
     {
     }
-    Sales_data(std::istream& is);
+    Sales_data(std::istream& is); // only
 
     std::string isbn() const { return bookNo; };
     Sales_data& combine(const Sales_data&);
