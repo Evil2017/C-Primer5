@@ -12,7 +12,8 @@
 #include <string>
 
 class Screen {
-public:
+    friend int ch(const Screen& s);
+
 public:
     void some_member() const;
 
@@ -31,5 +32,13 @@ private:
     pos height = 0, width = 0;
     std::string contents;
 };
-
+void Screen::some_member() const
+{
+    ++access_ctr;
+}
+int ch(const Screen& s)
+{
+    ++s.access_ctr;
+    return s.access_ctr;
+}
 #endif
