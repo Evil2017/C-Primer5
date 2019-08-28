@@ -10,7 +10,7 @@ class Sales_data {
     friend std::ostream& print(std::ostream& os, const Sales_data& item);
     friend Sales_data add(const Sales_data& lhs, const Sales_data& rhs);
 
-public:
+public: //接口
     Sales_data() = default;
     Sales_data(const std::string& s) : bookNo(s) {}
     Sales_data(const std::string& s, unsigned n, double p)
@@ -22,7 +22,7 @@ public:
     std::string isbn() const { return bookNo; };
     Sales_data& combine(const Sales_data&);
 
-private:
+private: //封装
     std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;

@@ -13,17 +13,20 @@
 
 class Screen {
 public:
-    using pos = std::string::size_type;
+public:
+    void some_member() const;
 
+    // using pos = std::string::size_type;
+    typedef std::string::size_type pos;
     Screen() = default;
-    Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c)
-    {
-    }
+    Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c) {}
 
     char get() const { return contents[cursor]; }
     char get(pos r, pos c) const { return contents[r * width + c]; }
 
 private:
+    // other members as before
+    mutable size_t access_ctr; // may change even in a const object
     pos cursor = 0;
     pos height = 0, width = 0;
     std::string contents;
