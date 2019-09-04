@@ -15,10 +15,13 @@ class Screen {
     friend int ch(const Screen& s);
 
 public:
+    typedef std::string::size_type pos;
+    Screen& set(char);
+    Screen& set(pos, pos, char);
+
     void some_member() const;
 
     // using pos = std::string::size_type;
-    typedef std::string::size_type pos;
     Screen() = default;
     Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c) {}
 
@@ -32,6 +35,17 @@ private:
     pos height = 0, width = 0;
     std::string contents;
 };
+inline Screen& Screen::set(char c)
+{
+    contents[cursor] = c;
+    return *this;
+}
+//返回的是调用set对象的引用 ，返回引用的函数是左值，则函数返回的是对象本身而非对象的副本
+inline Screen& Screen::set(pos r, pos col, char c)
+{
+    contents[r * width + col] = c;
+    return *this;
+}
 void Screen::some_member() const
 {
     ++access_ctr;
