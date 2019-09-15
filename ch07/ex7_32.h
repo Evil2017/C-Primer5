@@ -56,6 +56,7 @@ public:
 
 private:
     void do_display(std::ostream& os) const { os << contents; }
+    pos size() const;
 
 private:
     pos cursor = 0;
@@ -87,5 +88,8 @@ inline Screen& Screen::set(pos r, pos c, char ch)
     contents[r * width + c] = ch;
     return *this;
 }
-
+Screen::pos Screen::size() const
+{
+    return height * width;
+}
 #endif
