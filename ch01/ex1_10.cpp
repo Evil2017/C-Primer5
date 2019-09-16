@@ -10,5 +10,6 @@ int main()
         --val;
     }
     system("pause");
+    system("pause");
     return 0;
 }
