@@ -10,15 +10,17 @@
 #ifndef CP5_ex7_32_h
 #define CP5_ex7_32_h
 
-#include <vector>
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
 
 class Screen;
 
 class Window_mgr {
 public:
+    //窗口中每个屏幕的编号
     using ScreenIndex = std::vector<Screen>::size_type;
+    //根据编号将指定的Screen 重置为空白
     inline void clear(ScreenIndex);
 
 private:
@@ -31,11 +33,9 @@ class Screen {
 public:
     using pos = std::string::size_type;
 
-    Screen() = default; // 1
-    Screen(pos ht, pos wd) : height(ht), width(wd), contents(ht * wd, ' ') {} // 2
-    Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c)
-    {
-    } // 3
+    Screen() = default;                                                             // 1
+    Screen(pos ht, pos wd) : height(ht), width(wd), contents(ht * wd, ' ') {}       // 2
+    Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c) {} // 3
 
     char get() const { return contents[cursor]; }
     char get(pos r, pos c) const { return contents[r * width + c]; }
@@ -56,6 +56,7 @@ public:
 
 private:
     void do_display(std::ostream& os) const { os << contents; }
+    pos size() const;
 
 private:
     pos cursor = 0;
@@ -87,5 +88,8 @@ inline Screen& Screen::set(pos r, pos c, char ch)
     contents[r * width + c] = ch;
     return *this;
 }
-
+Screen::pos Screen::size() const
+{
+    return height * width;
+}
 #endif

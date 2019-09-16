@@ -1,9 +1,11 @@
 #include "ex7_41_sales_data.h"
 using std::cout;
 using std::endl;
-
+using namespace std;
+// static string str;
 int main()
 {
+    // cout << "the static string is :" << str << endl;
     cout << "1. default way: " << endl;
     cout << "----------------" << endl;
     Sales_data s1;

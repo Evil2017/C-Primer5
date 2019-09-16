@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 
+#include <iostream>
+#include <string>
 #include <vector>
-
+using namespace std;
 class NoDefault {
 public:
     NoDefault(int i) {}
@@ -19,9 +21,12 @@ public:
 private:
     NoDefault def;
 };
-
+static string str;
+static int i;
 int main()
 {
+    cout << "the static string is :" << str << endl;
+    cout << "the static int is :" << i << endl;
     C c;
 
     std::vector<C> vec(10);

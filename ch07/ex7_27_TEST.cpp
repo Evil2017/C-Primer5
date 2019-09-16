@@ -24,7 +24,7 @@ int main()
     std::cout << "\n";
     myScreen.display(std::cout);
     std::cout << "\n";
-
+    std::cout << std::endl;
     return 0;
 }
 int getInt()
