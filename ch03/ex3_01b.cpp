@@ -1,11 +1,11 @@
+#include "../ch02/ex2_42_sales_data.h"
 #include <iostream>
 #include <string>
-#include "../ch02/Sales_data.h"
 
+using std::cerr;
 using std::cin;
 using std::cout;
 using std::endl;
-using std::cerr;
 
 int main()
 {
