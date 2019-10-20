@@ -65,7 +65,8 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "array": "cpp"
     },
     // "editor.fontFamily": "Fira Code",
     // "files.defaultLanguage": "c", // ctrl+N新建文件后默认的语言
