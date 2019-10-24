@@ -13,14 +13,27 @@
 
 #include <iostream>
 #include <list>
-
-using std::list;
+#include <vector>
+using std::advance;
 using std::cout;
 using std::endl;
-using std::advance;
+using std::list;
 
 int main()
 {
+    std::vector<int> veci = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it = veci.begin();
+    while (it != veci.end()) {
+        if (*it % 2) {
+            it = veci.insert(it, *it);
+            it += 2;
+        }
+        else {
+            it = veci.erase(it);
+        }
+    }
+    for (auto i : veci) cout << i << " ";
+    system("pause");
     list<int> vi = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     auto iter = vi.begin();
     while (iter != vi.end()) {
@@ -33,6 +46,6 @@ int main()
     }
 
     for (auto i : vi) cout << i << " ";
-
+    system("pause");
     return 0;
 }

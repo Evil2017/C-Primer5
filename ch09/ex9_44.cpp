@@ -13,8 +13,8 @@
 
 using std::cout;
 using std::endl;
-using std::string;
 using std::prev;
+using std::string;
 
 void Replace(string& s, string const& oldVal, string const& newVal)
 {
@@ -31,4 +31,6 @@ int main()
     Replace(str, "tho", "though");
     Replace(str, "thru", "through");
     cout << str << endl;
+    system("pause");
+    return 0;
 }

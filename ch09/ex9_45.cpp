@@ -13,14 +13,13 @@
 #include <string>
 
 //! Exercise 9.45
-std::string pre_suffix(const std::string& name, const std::string& pre,
-                       const std::string& su);
+std::string pre_suffix(const std::string& name, const std::string& pre, const std::string& su);
 
 int main()
 {
     std::string name("alan");
     std::cout << pre_suffix(name, "Mr.", ",Jr.") << std::endl;
-
+    system("pause");
     return 0;
 }
 
@@ -28,8 +27,9 @@ inline std::string pre_suffix(const std::string& name, const std::string& pre,
                               const std::string& su)
 {
     auto ret = name;
-    ret.insert(ret.begin(), pre.begin(), pre.end());
-    ret.append(su);
+    // ret.insert(ret.begin(), pre.begin(), pre.end());
+    ret.insert(0, pre);
+    ret.insert(ret.size(), su);
 
     return ret;
 }

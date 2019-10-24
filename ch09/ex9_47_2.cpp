@@ -12,12 +12,12 @@
 //          and the second find_first_not_of.
 //  @Version find_first_not_of
 
-#include <string>
 #include <iostream>
+#include <string>
 
-using std::string;
 using std::cout;
 using std::endl;
+using std::string;
 
 int main()
 {
@@ -26,12 +26,12 @@ int main()
     string str{"ab2c3d7R4E6"};
 
     cout << "numeric characters: ";
-    for (string::size_type pos = 0;
-         (pos = str.find_first_not_of(alphabet, pos)) != string::npos; ++pos)
+    for (string::size_type pos = 0; (pos = str.find_first_not_of(alphabet, pos)) != string::npos;
+         ++pos)
         cout << str[pos] << " ";
     cout << "\nalphabetic characters: ";
-    for (string::size_type pos = 0;
-         (pos = str.find_first_not_of(numbers, pos)) != string::npos; ++pos)
+    for (string::size_type pos = 0; (pos = str.find_first_not_of(numbers, pos)) != string::npos;
+         ++pos)
         cout << str[pos] << " ";
     cout << endl;
 

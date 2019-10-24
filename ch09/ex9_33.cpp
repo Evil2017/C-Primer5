@@ -16,9 +16,9 @@
 #include <iostream>
 #include <vector>
 
-using std::vector;
 using std::cout;
 using std::endl;
+using std::vector;
 
 int main()
 {
@@ -26,11 +26,12 @@ int main()
     auto begin = v.begin();
     while (begin != v.end()) {
         ++begin;
-        /*begin = */ v.insert(begin, 42);
+        begin = v.insert(begin, 42);
         ++begin;
     }
 
     for (auto i : v) cout << i << " ";
-
+    cout << endl;
+    system("pause");
     return 0;
 }

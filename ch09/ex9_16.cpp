@@ -5,8 +5,8 @@
 //! a vector<int>.
 
 #include <iostream>
-#include <vector>
 #include <list>
+#include <vector>
 
 int main()
 {
@@ -14,10 +14,9 @@ int main()
     std::vector<int> vec1{1, 2, 3, 4, 5};
     std::vector<int> vec2{1, 2, 3, 4};
 
-    std::cout << std::boolalpha
-              << (std::vector<int>(list.begin(), list.end()) == vec1)
+    std::cout << std::boolalpha << (std::vector<int>(list.begin(), list.end()) == vec1)
               << std::endl;
-    std::cout << std::boolalpha
-              << (std::vector<int>(list.begin(), list.end()) == vec2)
+    std::cout << std::boolalpha << (std::vector<int>(list.begin(), list.end()) == vec2)
               << std::endl;
+    system("pause");
 }

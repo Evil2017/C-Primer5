@@ -9,23 +9,23 @@
 //          Now use an istringstream to read each element from the vector a word
 //          at a time.
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <sstream>
-#include <vector>
 #include <string>
+#include <vector>
 
-using std::vector;
-using std::string;
-using std::ifstream;
-using std::istringstream;
+using std::cerr;
 using std::cout;
 using std::endl;
-using std::cerr;
+using std::ifstream;
+using std::istringstream;
+using std::string;
+using std::vector;
 
 int main()
 {
-    ifstream ifs("../data/book.txt");
+    ifstream ifs("/data/book.txt");
     if (!ifs) {
         cerr << "No data?" << endl;
         return -1;
@@ -40,6 +40,6 @@ int main()
         string word;
         while (iss >> word) cout << word << endl;
     }
-
+    system("pause");
     return 0;
 }
